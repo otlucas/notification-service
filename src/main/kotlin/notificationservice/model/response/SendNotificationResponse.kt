@@ -1,4 +1,6 @@
 package notificationservice.model.response
 
-class SendNotificationResponse {
-}
+data class SendNotificationResponse (
+    val status: String,
+    val message: String
+)

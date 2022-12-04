@@ -1,4 +1,7 @@
 package notificationservice.model.request
 
-class SendNotificationRequest {
-}
+data class SendNotificationRequest (
+    val userId: String,
+    val notificationType: String,
+    val message: String
+)
