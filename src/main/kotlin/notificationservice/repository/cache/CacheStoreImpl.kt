@@ -14,7 +14,7 @@ class CacheStoreImpl: CacheStore {
     init {
         // Create a config object and set the appropriate Redis connection settings
         val config = Config()
-        config.useSingleServer().address = "redis://127.0.0.1:6379"
+        config.useSingleServer().address = "redis://redis:6379"
 
         // Initialize the RedissonReactiveClient with the config
        redisClient = Redisson.create(config).reactive()
