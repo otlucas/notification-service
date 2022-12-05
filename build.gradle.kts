@@ -42,5 +42,5 @@ tasks.withType<KotlinCompile> {
 }
 
 application {
-    mainClass.set("notificationservice.App.kt")
+    mainClass.set("notificationservice.App")
 }
