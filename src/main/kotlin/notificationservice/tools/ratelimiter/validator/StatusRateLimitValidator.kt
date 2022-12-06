@@ -1,6 +1,6 @@
-package notificationservice.tools.ratelimiter.strategy
+package notificationservice.tools.ratelimiter.validator
 
-import notificationservice.repository.cache.CacheStore
+import notificationservice.tools.ratelimiter.cache.CacheStore
 import notificationservice.tools.ratelimiter.RateLimitEventOrigin
 import notificationservice.tools.ratelimiter.RateLimitRequestCommand
 import org.springframework.beans.factory.annotation.Autowired
@@ -19,7 +19,7 @@ constructor(
         )
     }
 
-    override fun appliesFor(requestCommand: RateLimitRequestCommand): Boolean {
-        return requestCommand.type == RateLimitEventOrigin.STATUS
+    override fun appliesFor(command: RateLimitRequestCommand): Boolean {
+        return command.type == RateLimitEventOrigin.STATUS
     }
 }

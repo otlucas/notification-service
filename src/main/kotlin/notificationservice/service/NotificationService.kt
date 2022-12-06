@@ -13,8 +13,7 @@ class NotificationService(
     private val rateLimiter: RateLimiter
 ){
     fun sendNotification(command: SendNotificationCommand): Mono<Notification> {
-        return Mono.just(
-            rateLimiter.validate(RateLimitRequestCommand(RateLimitEventOrigin.valueOf(command.type), command.userId))
-        ).map { Notification("mocked id") }
+        return rateLimiter.validate(RateLimitRequestCommand(RateLimitEventOrigin.valueOf(command.type), command.userId))
+            .map { Notification("mocked id") }
     }
 }

@@ -1,4 +1,4 @@
-package notificationservice.repository.cache
+package notificationservice.tools.ratelimiter.cache
 
 import reactor.core.publisher.Mono
 
